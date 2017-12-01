@@ -19,7 +19,7 @@ public class UserInfoRest {
 public ArrayList<UserInfo> test()
 {
 	ArrayList<UserInfo> userinfo=new ArrayList<UserInfo>();
-	userinfo=mdb.MongoDB1();
+	userinfo=mdb.getUserInfo();
 	return userinfo;
 }
 }

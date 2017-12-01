@@ -8,6 +8,7 @@ public class UserInfo {
 	String userName;
 	String password;
 	String role;
+	String confirmPassword;
 	/*public String get_id() {
 		return _id;
 	}
@@ -15,14 +16,24 @@ public class UserInfo {
 		this._id = _id;
 	}*/
 	
+	
 	public String getName() {
 		return name;
+	}
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 	public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	public UserInfo() {
+		
 	}
 	public UserInfo(String name, String associateId, String emailId, String userName, String password, String role) {
 		super();

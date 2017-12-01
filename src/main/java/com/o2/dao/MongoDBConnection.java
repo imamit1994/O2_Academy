@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
@@ -13,7 +14,7 @@ import com.o2.model.UserInfo;
 
 @Service
 public class MongoDBConnection {
-	public ArrayList<UserInfo> MongoDB1(){
+	public ArrayList<UserInfo> getUserInfo(){
 		ArrayList<UserInfo> userinfo=new ArrayList<UserInfo>();
 		try{
 			
@@ -44,5 +45,25 @@ public class MongoDBConnection {
 	         System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	      }
 		return userinfo;
+	}
+	public void saveUserInfo(UserInfo userinfo) {
+try{
+			
+			MongoClient client = new MongoClient("localhost",27017); //with default server and port adress
+			System.out.println("Sucessfully connected with database !!!!!!!!");
+			DB db = client.getDB( "O2Academy" );
+			DBCollection collection = db.getCollection("UserInfo");
+			BasicDBObject document = new BasicDBObject();
+			document.put("userName",userinfo.getUserName());
+			document.put("associateId", userinfo.getAssociateId());
+			document.put("emailId",userinfo.getEmailId());
+			document.put("name", userinfo.getName());
+			document.put("password",userinfo.getPassword());
+			document.put("role",userinfo.getRole());
+			collection.insert(document);
+			client.close();
+	      }catch(Exception e){
+	         System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	      }
 	}
 }
