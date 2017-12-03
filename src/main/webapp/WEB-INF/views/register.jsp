@@ -7,6 +7,9 @@
 <head>
 
 	 <link href="resources/css/stylish-portfolio.css" rel="stylesheet">
+	 <script src="resources/vendor/jquery/jquery.min.js"></script>
+	 <script src="resources/js/main.js"></script>
+	 <link href="resources/css/main.css" rel="stylesheet">
 	 
 </head>
 <body>
@@ -14,16 +17,19 @@
 	<div class="wrapper">
 
 <h2>Register </h2>
-
-<form:form modelAttribute="userInfo"  action="usersave">
   
-
   <div class="container">
+  	<div>
+    <p id="emailvalidation">Email Id is already registered Please Choose a different one</p>
+    <p id="associateidvalidation">Associate Id is already registered Please Choose a different one</p>
+    <p id="usernamevalidation">User Name is already registered Please Choose a different one</p>
+    </div>
+    <form:form modelAttribute="userInfo"  action="usersave" id="form">
     <label><b>Name</b></label>
     <form:input type="text" placeholder="Enter Username" name="name" path="name" required="required"></form:input>
 
     <label><b>Associate Id</b></label>
-    <form:input type="Tel" placeholder="Enter Id" name="Id" path="associateId" required="required"></form:input>
+    <form:input type="Tel" placeholder="Enter Id" name="Id" path="associateId" required="required" id="associateid"></form:input>
 
     <label><b>Role</b></label>
     
@@ -36,24 +42,19 @@
   <br>
 
     <label><b>Email Id</b></label>
-    <form:input type="Email" placeholder="Email Id" name="Email" path="emailId" required="required"></form:input>
+    <form:input type="Email" placeholder="Email Id" name="Email" path="emailId" required="required" id="email"></form:input>
 
     <label><b>Select Username</b></label>
-    <form:input type="text" placeholder="Enter name" name="uname" path="userName" required="required"></form:input>
+    <form:input type="text" placeholder="Enter name" name="uname" path="userName" required="required" id="username"></form:input>
 
     <label><b>Select Password</b></label>
     <form:input type="password" placeholder="Select Password" name="password" path="password" required="required" ></form:input>
 
     <label><b>Confirm Password</b></label>
     <form:input type="password" placeholder="Confirm Password" name="Password" path="confirmPassword" required="required" ></form:input>        
-    <button type="submit">Sign Up</button>
-    
-  </div>
-
-  
-
-  
+    <button type="submit" id="registersubmit">Sign Up</button>
 </form:form>
-</div>>
+</div>
+</div>
 </body>
 </html>

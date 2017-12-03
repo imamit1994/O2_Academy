@@ -1,5 +1,4 @@
 @charset "ISO-8859-1";
-#test{
-	 		margin-top: 400px;
-	 		margin-right: 500px;
-	 	}
+	p{
+			color:red;
+		}
