@@ -13,13 +13,17 @@ import com.o2.model.UserInfo;
 public class UserInfoRest {
 	
 	@Autowired
-	MongoDBConnection mdb;
+	MongoDBConnection mongodbconnection;
 	
-@RequestMapping("/test")	
+	/*
+	 * TODO creating a rest api with all UserInfo
+	 */
+@RequestMapping("/allUser")	
 public ArrayList<UserInfo> test()
 {
 	ArrayList<UserInfo> userinfo=new ArrayList<UserInfo>();
-	userinfo=mdb.getUserInfo();
+	//userinfo=mdb.getUserInfo();
+	userinfo=mongodbconnection.getAllUserInfo();
 	return userinfo;
 }
 }

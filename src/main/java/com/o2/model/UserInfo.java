@@ -1,7 +1,14 @@
 package com.o2.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+/*
+ * UserInfo is the collection name inside mongo DB database
+ */
+@Document(collection = "UserInfo")
 public class UserInfo {
-	//String _id;
+	@Id
+	String id;
 	String name;
 	String associateId;
 	String emailId;
@@ -9,12 +16,6 @@ public class UserInfo {
 	String password;
 	String role;
 	String confirmPassword;
-	/*public String get_id() {
-		return _id;
-	}
-	public void set_id(String _id) {
-		this._id = _id;
-	}*/
 	
 	
 	public String getName() {

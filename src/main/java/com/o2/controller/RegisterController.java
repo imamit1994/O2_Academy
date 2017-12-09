@@ -12,7 +12,9 @@ import com.o2.model.UserInfo;
 
 @Controller
 public class RegisterController {
-	
+	/*
+	 * TODO this will excute once user will click on the signup in home page
+	 */
 	@Autowired
 	MongoDBConnection mongodbconnection;
 	@RequestMapping("/register")
@@ -22,17 +24,16 @@ public class RegisterController {
 		mv.addObject("userInfo", new UserInfo());
 		return mv;
 	}
+	
+	/*
+	 * TODO this will excute once the user click on submit in user registratio page
+	 * @Param userinfo Contain the data which is enter by user in signup page
+	 */
 	@RequestMapping("/usersave")
 	public ModelAndView showNext(@ModelAttribute UserInfo userinfo) {
 		System.out.println("this will excute after registration");
 		ModelAndView mv = new ModelAndView("home");
-		System.out.println("Name:"+userinfo.getName());
-		System.out.println("Email"+userinfo.getEmailId());
-		System.out.println("AssociateId:"+userinfo.getAssociateId());
-		System.out.println("Password"+userinfo.getPassword());
-		System.out.println("Role:"+userinfo.getRole());
-		System.out.println("Username:"+userinfo.getUserName());
-		mongodbconnection.saveUserInfo(userinfo);
+		mongodbconnection.saveRegistrationData(userinfo);//this will save the UserInfo Data into database
 		return mv;
 	}
 }

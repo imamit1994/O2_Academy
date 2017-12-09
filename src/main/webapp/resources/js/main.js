@@ -12,8 +12,8 @@ function hideError() {
 		    $("#registersubmit").click(function(){
 		    	var userinfo=[];
 		    	$.ajax({
-		    	    method:"GET", 
-		    	    url: "http://localhost:8080/O2_Academy/test",
+		    	    method:"GET",
+		    	    url: "http://localhost:8080/O2_Academy/allUser",
 		    	    async:false,
 		    	    success: function(data) {
 		    	            userinfo=data;
