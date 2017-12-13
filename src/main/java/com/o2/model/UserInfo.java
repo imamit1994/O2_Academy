@@ -12,7 +12,7 @@ public class UserInfo {
 	String name;
 	String associateId;
 	String emailId;
-	String userName;
+	//String userName;
 	String password;
 	String role;
 	String confirmPassword;
@@ -36,12 +36,12 @@ public class UserInfo {
 	public UserInfo() {
 		
 	}
-	public UserInfo(String name, String associateId, String emailId, String userName, String password, String role) {
+	public UserInfo(String name, String associateId, String emailId, String password, String role) {
 		super();
 		this.name = name;
 		this.associateId = associateId;
 		this.emailId = emailId;
-		this.userName = userName;
+		//this.userName = userName;
 		this.password = password;
 		this.role=role;
 	}
@@ -60,12 +60,12 @@ public class UserInfo {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	public String getUserName() {
+	/*public String getUserName() {
 		return userName;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
+	}*/
 	public String getPassword() {
 		return password;
 	}

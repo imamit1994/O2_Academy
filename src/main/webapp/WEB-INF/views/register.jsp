@@ -14,23 +14,23 @@
 </head>
 <body>
 	<div class="wrapper">
-<h2>Register </h2>
+<h2>Register Here</h2>
   
   <div class="container">
   	<div>
     <p id="emailvalidation">Email Id is already registered Please Choose a different one</p>
     <p id="associateidvalidation">Associate Id is already registered Please Choose a different one</p>
-    <p id="usernamevalidation">User Name is already registered Please Choose a different one</p>
+    <p id="validatePassword">Password and Confirm Password must be same</p>
+    <!--  <p id="usernamevalidation">User Name is already registered Please Choose a different one</p>-->
     </div>
     <form:form modelAttribute="userInfo"  action="usersave" id="form">
     <label><b>Name</b></label>
-    <form:input type="text" placeholder="Enter Username" name="name" path="name" required="required"></form:input>
+    <form:input type="text" placeholder="Enter Associate Name" name="name" path="name" required="required"></form:input>
 
     <label><b>Associate Id</b></label>
     <form:input type="Tel" placeholder="Enter Id" name="Id" path="associateId" required="required" id="associateid"></form:input>
-
-    <label><b>Role</b></label>
     
+    <label><b>Role</b></label>   
  <form:select name="Role" path="role">
     <form:option value="associate">Associate</form:option>
     <form:option value="mentor">Mentor</form:option>
@@ -41,15 +41,11 @@
 
     <label><b>Email Id</b></label>
     <form:input type="Email" placeholder="Email Id" name="Email" path="emailId" required="required" id="email"></form:input>
-
-    <label><b>Select Username</b></label>
-    <form:input type="text" placeholder="Enter name" name="uname" path="userName" required="required" id="username"></form:input>
-
     <label><b>Select Password</b></label>
-    <form:input type="password" placeholder="Select Password" name="password" path="password" required="required" ></form:input>
+    <form:input type="password" placeholder="Password" name="password" path="password" required="required" id="password"></form:input>
 
     <label><b>Confirm Password</b></label>
-    <form:input type="password" placeholder="Confirm Password" name="Password" path="confirmPassword" required="required" ></form:input>        
+    <form:input type="password" placeholder="Confirm Password" name="Password" path="confirmPassword" required="required" id="confirmpassword"></form:input>        
     <button type="submit" id="registersubmit">Sign Up</button>
 </form:form>
 </div>
