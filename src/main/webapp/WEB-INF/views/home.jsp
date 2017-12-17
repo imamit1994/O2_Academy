@@ -34,7 +34,7 @@
         <h1>O2 Academy</h1>
         <h3>Learn Almost Anything</h3>
         <br>
-	    <a href="login.html" class="btn btn-dark btn-lg js-scroll-trigger">Login</a>
+	    <a href="login" class="btn btn-dark btn-lg js-scroll-trigger">Login</a>
 
 		 <a href="register" class="btn btn-dark btn-lg js-scroll-trigger">Sign Up</a>
       </div>

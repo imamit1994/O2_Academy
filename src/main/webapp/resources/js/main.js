@@ -57,3 +57,63 @@ $(document).ready(function() {
 	});
 
 });
+
+
+//login.jsp
+function hideLoginError() {
+	$("#logincredentialerror").hide();
+}
+$(document).ready(function() {
+	hideLoginError();
+	$("#userloginsubmit").click(function() {
+		try{
+		var userinfo = [];
+		var count = 0;
+		$.ajax({
+			method : "GET",
+			url : "http://localhost:8080/O2_Academy/allUser",
+			async : false,
+			success : function(data) {
+				userinfo = data;
+				// alert("Data"+userinfo+"Data"+data+"length"+userinfo.length+"name"+userinfo[0].name);
+			},
+			error : function(xhr, status, error) {
+				alert(xhr.responseText);
+			}
+		});
+		var associateId = $('#associateId').val();
+		var password = $('#password').val();
+		//alert("associate id="+associateId+" length="+userinfo.length);
+		for (var i = 0; i < userinfo.length; i++) {
+			if ((associateId==userinfo[i].associateId)&& (password==userinfo[i].password)) {
+				count++;
+			}
+		}
+		if(count==0){
+			$("#logincredentialerror").show();
+			event.preventDefault();
+			$("form")[0].reset();
+		}	
+		}
+		catch(err){
+			alert("Error=="+err.message);
+		}
+		
+	});
+});
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
