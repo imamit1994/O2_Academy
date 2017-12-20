@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import com.o2.model.SelectCourse;
 import com.o2.model.UserInfo;
 
 @Service
@@ -32,6 +33,9 @@ public class MongoDBConnection {
 	    	List<UserInfo> userinfo=mongoTemplate.find(query,UserInfo.class);
 	    	System.out.println("UserInfo"+userinfo);
 	    	return (ArrayList<UserInfo>) userinfo;
+	    }
+	    public void addselectedCourse(SelectCourse selectcourse) {
+	    	mongoTemplate.save(selectcourse);
 	    }
 
 }
