@@ -1,17 +1,18 @@
 package com.o2.model;
 
-import org.springframework.data.annotation.Id;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 /*
  * UserInfo is the collection name inside mongo DB database
  */
 @Document(collection = "UserInfo")
 public class UserInfo {
-	String name;
-	@Id
+
+
+
 	String associateId;
+	String name;
 	String emailId;
-	//String userName;
 	String password;
 	String role;
 	String confirmPassword;
@@ -40,7 +41,6 @@ public class UserInfo {
 		this.name = name;
 		this.associateId = associateId;
 		this.emailId = emailId;
-		//this.userName = userName;
 		this.password = password;
 		this.role=role;
 	}
@@ -59,12 +59,6 @@ public class UserInfo {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	/*public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}*/
 	public String getPassword() {
 		return password;
 	}

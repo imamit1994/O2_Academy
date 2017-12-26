@@ -31,7 +31,7 @@
     <form:input type="Tel" placeholder="Enter Id" name="Id" path="associateId" required="required" id="associateid"></form:input>
     
     <label><b>Role</b></label>   
- <form:select name="Role" path="role">
+  <form:select name="Role" path="role">
     <form:option value="associate">Associate</form:option>
     <form:option value="mentor">Mentor</form:option>
     <form:option value="Supervisor">Supervisor</form:option>

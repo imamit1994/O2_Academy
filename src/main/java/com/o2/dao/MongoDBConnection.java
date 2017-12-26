@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,6 @@ public class MongoDBConnection {
 	     */
 	    public ArrayList<UserInfo> getAllUserInfo() {
 	    	Query query = new Query();
-	    	//query.addCriteria(Criteria.where("name").is("Eric"));
 	    	List<UserInfo> userinfo=mongoTemplate.find(query,UserInfo.class);
 	    	System.out.println("UserInfo"+userinfo);
 	    	return (ArrayList<UserInfo>) userinfo;
@@ -37,5 +37,12 @@ public class MongoDBConnection {
 	    public void addselectedCourse(SelectCourse selectcourse) {
 	    	mongoTemplate.save(selectcourse);
 	    }
+
+	    public UserInfo getUserInfo(String associateId){
+			Query query = new Query();
+			query.addCriteria(Criteria.where("associateId").is(associateId));
+			return mongoTemplate.findOne(query,UserInfo.class);
+
+		}
 
 }

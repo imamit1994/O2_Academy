@@ -16,24 +16,26 @@
 
 <h2>Login</h2>
 
-<form:form action="userdashbord" modelAttribute="loginForm" id="form">
+<form:form action="userdashboard" modelAttribute="loginForm" id="form">
   
   <div class="container">
   	<div>
     <p id="logincredentialerror">You have entered wrong Id or Password</p>
     </div>
+
     <label><b>Associate Id</b></label>
     <form:input type="text" placeholder="Enter Associate Id" path="associateId" required="required" id="associateId"></form:input>
 
     <label><b>Password</b></label>
     <form:input type="password" placeholder="Enter Password" name="password" path="password" required="required" id="password"></form:input>
-        
+
+
     <button type="submit" id="userloginsubmit">Login</button>
     <input type="checkbox" checked="checked"> Remember me
   </div>
 
   <div class="container1">
-    <button type="button" class="cancelbtn">Cancel</button>
+
     <span class="password">Forgot <a href="#">password?</a></span>
   </div>
 </form:form>

@@ -21,6 +21,16 @@ body {
   vertical-align: middle;
 }
 
+.text-vertical{
+    display: table-cell;
+    text-align: center;
+}
+.text-vertical h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
 .text-vertical-center h1 {
   font-size: 4.5em;
   font-weight: 700;
@@ -28,9 +38,31 @@ body {
   padding: 0;
 }
 
+/*
+!*Custom mentor profile cell styles*!
+.cell {
+     display: table-cell;
+     height: 100%;
+     padding: 10px;
+     width: 16.666%;
+     border: 3px solid black;
+
+ }
+*/
 
 /* Custom Button Styles */
-
+.button {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 .btn-dark {
   color: #fff;
   border: none;
@@ -288,6 +320,16 @@ button {
     cursor: pointer;
     width: 100%;
 }
+.formD,.formDe {
+    width: 40%;
+    display: inline-block;
+    float: left;
+
+}
+.formD{
+    padding-left: 600px;
+}
+
 
 button:hover {
     opacity: 0.8;

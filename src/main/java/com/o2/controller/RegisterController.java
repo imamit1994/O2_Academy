@@ -26,12 +26,12 @@ public class RegisterController {
 	}
 	
 	/*
-	 * TODO this will excute once the user click on submit in user registratio page
+	 * TODO this will excute once the user click on submit in user registration page
 	 * @Param userinfo Contain the data which is enter by user in signup page
 	 */
 	@RequestMapping("/usersave")
 	public ModelAndView showNext(@ModelAttribute UserInfo userinfo) {
-		System.out.println("this will excute after registration");
+		System.out.println("this will execute after registration");
 		ModelAndView mv = new ModelAndView("home");
 		mongodbconnection.saveRegistrationData(userinfo);//this will save the UserInfo Data into database
 		return mv;
