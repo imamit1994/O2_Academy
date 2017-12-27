@@ -14,12 +14,12 @@ public class UserController {
     @Autowired
     MongoDBConnection mongodbconnection;
 
-    @RequestMapping("/viewMprofile/{associateId}")
-    public ModelAndView getEmployeeDetails(@PathVariable(value = "associateId") String associateId) {
+    @RequestMapping("/viewMprofile")
+    public ModelAndView getEmployeeDetails() {
         System.out.println("display view mentor profile");
         ModelAndView mv = new ModelAndView("aProfile");
         UserInfo userInfo = new UserInfo();
-        userInfo= mongodbconnection.getUserInfo(associateId);
+        userInfo= mongodbconnection.getUserInfo("573010");
         mv.addObject("userInfo", userInfo);
         return mv;
     }

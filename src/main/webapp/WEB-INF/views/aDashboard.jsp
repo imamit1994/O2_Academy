@@ -1,63 +1,120 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Dashboard</title>
-
-
-    <!-- Bootstrap Core CSS -->
-    <link href="<c:url value="resources/vendor/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Custom CSS -->
     <link href="resources/css/stylish-portfolio.css" rel="stylesheet">
-</head>
-
-<body>
-<!-- Navigation -->
-
-
-
-<!-- Header -->
-<header class="header" id="top">
-    <header class="header" id="top">
-        <div class="text-vertical text" id="test">
-            <h1>Associate Dashboard</h1>
-
-            <br>
-            <form class="formD" action="/viewMprofile/123456" method="get" >
-                <input type="submit" value="View My Profile" class="button"></form>
-            <form class="formDe" action="" method="">
-                <input type="submit" value="View My Courses" class="button">
-            </form>
-
-
-        </div>
-    </header>
-
-
-
-    <!-- Footer -->
-
-    <!-- Bootstrap core JavaScript -->
     <script src="resources/vendor/jquery/jquery.min.js"></script>
-    <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="resources/js/main.js"></script>
+    <link href="resources/css/main.css" rel="stylesheet">
+    <link href="resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .jumbotron {
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            background-color: #1d2124;
+            border-radius: 0.3rem;
+            color: white;
+        }
+    </style>
 
-    <!-- Plugin JavaScript -->
-    <script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+</head>
+<body>
 
-    <!-- Custom scripts for this template -->
-    <script src="resources/js/stylish-portfolio.js"></script>
+<!--Header-->
+<div class="wrapper">
+    <div class="jumbotron">
+        <h1>O<sub>2</sub>  Academy</h1>
+        <h3>Learn Almost Anything !!!</h3>
+    </div>
 
+    <!--Log out-->
+    <button class="log_out" type="submit" id="sub">Sign Out</button>
+
+
+    <!--web content-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+            </div>
+
+            <div class="col-sm-4">
+                <a href="viewMprofile"><button type="submit" class="widget1" id="sub1">My Profile</button></a>
+            </div>
+
+            <div class="col-sm-4">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-4">
+                <button class="widget1" type="submit" id="subt"><a href="#">My Courses</a></button>
+            </div>
+
+            <div class="col-sm-4">
+            </div>
+
+            <div class="col-sm-4">
+                <a href="selectCourse"><button class="widget1" type="submit" id="sub2">Select Courses</button></a>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+
+            <div class="col-sm-4">
+                <button class="widget1" type="submit" id="submit"><a href="#">Track your learning</a></button>
+            </div>
+
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+<!--End of website main content-->
+
+<!--Footer-->
+
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <p>Contact Address :</p>
+                <address>
+                    Cognizant Techology Solutions,
+                    ICC Tech Tower, Pune, India
+                </address>
+            </div>
+        </div>
+
+        <div class="bottm-footer">
+            <div class="col-md-5 foot_div" c>© Copyright O2 Academy Pune 2017. All rights reserved</div>
+            <div class="col-md-7 foot_div">
+                <ul class="footer-nav">
+                    <li><a>Designed by O2 Academy Pune</a></li>
+                    <li><a>Contact</a></li>
+                    <li><a>Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
-
 </html>
