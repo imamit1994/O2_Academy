@@ -1,6 +1,7 @@
 package com.o2.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.o2.model.SelectCourse;
 import com.o2.model.UserInfo;
+import com.o2.model.UserSelectedMentor;
 
 @Service
 public class MongoDBConnection {
@@ -50,5 +52,20 @@ public class MongoDBConnection {
 			return mongoTemplate.findOne(query,SelectCourse.class);
 
 		}
+	    public HashMap<String,String> getMentorList() {
+	    	HashMap<String,String> mentorlist=new HashMap<String,String>();
+	    	Query query = new Query();
+	    	query.addCriteria(Criteria.where("role").is("mentor"));
+	    	List<UserInfo> userinfo=mongoTemplate.find(query,UserInfo.class);
+	    	for(UserInfo user:userinfo) {
+	    		mentorlist.put(user.getAssociateId(),user.getName());
+	    	}
+	    	
+	    	return mentorlist;
+	    }
+	    
+	    public void saveUserSelectedmentor(UserSelectedMentor userSelectedMentor) {
+	        mongoTemplate.save(userSelectedMentor);
+	    }
 
 }

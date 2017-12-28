@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-
+   <%@ page isELIgnored="false" %>
     <link href="resources/css/stylish-portfolio.css" rel="stylesheet">
     <script src="resources/vendor/jquery/jquery.min.js"></script>
     <script src="resources/js/main.js"></script>
@@ -30,68 +30,27 @@
         <h1>O<sub>2</sub>  Academy</h1>
         <h3>Learn Almost Anything !!!</h3>
     </div>
+     <nav>
+        <ul>
+            <li><a href="showcourse">My Courses</a></li>
+            <li><a href="selectCourse">Select Courses</a></li>
+            <li><a href="dashbordotherthanlogin">Dashbord</a></li>
+        </ul>
 
-    <!--Log out-->
-    <a href="signout"><button class="log_out" type="submit" id="sub">Sign Out</button></a>
-
-
-    <!--web content-->
-
+    </nav>
+	<a href="signout"><button class="log_out" type="submit" id="sub">Sign Out</button></a>
+    <!--Web content-->
     <div class="container">
-        <!--  <div class="row">
-            <div class="col-sm-4">
-            </div>
-
-            <div class="col-sm-4">
-                <a href="viewMprofile"><button type="submit" class="widget1" id="sub1">My Profile</button></a>
-            </div>
-
-            <div class="col-sm-4">
-            </div>
-        </div> -->
-
-
-        <div class="row">
-            <div class="col-sm-3">
-               <a href="showcourse"> <button class="widget1" type="submit" id="subt">My Courses</button></a>
-            </div>
-
-           <div class="col-sm-3">
-                <a href="viewMprofile"><button type="submit" class="widget1" id="sub1">My Profile</button></a>
-            </div>
-
-            <div class="col-sm-3">
-                <a href="selectCourse"><button class="widget1" type="submit" id="sub2">Select Courses</button></a>
-
-            </div>
-            <div class="col-sm-3">
-                <a href="changementor"><button class="widget1" type="submit" id="sub2">Select/Change Mentor</button></a>
-
-            </div>
-        </div>
-
-
-       <!--   <div class="row">
-            <div class="col-sm-4">
-
-            </div>
-
-            <div class="col-sm-4">
-                <button class="widget1" type="submit" id="submit"><a href="#">Track your learning</a></button>
-            </div>
-
-            <div class="col-sm-4">
-
-            </div>
-        </div>
-		-->
+    <form:form action="mentorselect" modelAttribute="userSelectedMentor">
+    <center>
+    	<h1>Please Select your mentor</h1>
+    	<form:select path="mentorId" items="${mentorlist}">
+  		</form:select><br/>
+    	<button class="submit_Btn" type="submit" id="submit">Submit</button>
+    	</center>
+       </form:form>
     </div>
-
-
 </div>
-</div>
-
-
 <!--End of website main content-->
 
 <!--Footer-->

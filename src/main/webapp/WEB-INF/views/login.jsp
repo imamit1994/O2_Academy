@@ -33,11 +33,6 @@
     <button type="submit" id="userloginsubmit">Login</button>
     <input type="checkbox" checked="checked"> Remember me
   </div>
-
-  <div class="container1">
-
-    <span class="password">Forgot <a href="#">password?</a></span>
-  </div>
 </form:form>
 </div>>
 </body>
