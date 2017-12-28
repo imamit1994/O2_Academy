@@ -34,7 +34,6 @@
   <form:select name="Role" path="role">
     <form:option value="associate">Associate</form:option>
     <form:option value="mentor">Mentor</form:option>
-    <form:option value="Supervisor">Supervisor</form:option>
   </form:select>
 
   <br>

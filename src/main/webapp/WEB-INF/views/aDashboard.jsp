@@ -32,13 +32,13 @@
     </div>
 
     <!--Log out-->
-    <button class="log_out" type="submit" id="sub">Sign Out</button>
+    <a href="signout"><button class="log_out" type="submit" id="sub">Sign Out</button></a>
 
 
     <!--web content-->
 
     <div class="container">
-        <div class="row">
+        <!--  <div class="row">
             <div class="col-sm-4">
             </div>
 
@@ -48,15 +48,16 @@
 
             <div class="col-sm-4">
             </div>
-        </div>
+        </div> -->
 
 
         <div class="row">
             <div class="col-sm-4">
-                <button class="widget1" type="submit" id="subt"><a href="#">My Courses</a></button>
+               <a href="showcourse"> <button class="widget1" type="submit" id="subt">My Courses</button></a>
             </div>
 
-            <div class="col-sm-4">
+           <div class="col-sm-4">
+                <a href="viewMprofile"><button type="submit" class="widget1" id="sub1">My Profile</button></a>
             </div>
 
             <div class="col-sm-4">
@@ -66,7 +67,7 @@
         </div>
 
 
-        <div class="row">
+       <!--   <div class="row">
             <div class="col-sm-4">
 
             </div>
@@ -79,7 +80,7 @@
 
             </div>
         </div>
-
+		-->
     </div>
 
 

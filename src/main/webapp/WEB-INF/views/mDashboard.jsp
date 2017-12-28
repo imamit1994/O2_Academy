@@ -30,7 +30,7 @@
         <h1>O<sub>2</sub>  Academy</h1>
         <h3>Learn Almost Anything !!!</h3>
     </div>
-
+	<a href="signout"><button class="log_out" type="submit" id="sub">Sign Out</button></a>
     <!--Web content-->
     <div class="container">
         <div class="row">
