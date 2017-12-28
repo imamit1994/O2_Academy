@@ -4,9 +4,11 @@ import com.o2.dao.MongoDBConnection;
 import com.o2.model.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.o2.model.LoginForm;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 
 
 @Controller
+@SessionAttributes("logininfo")
 public class LoginController {
 	@Autowired
 	MongoDBConnection mongoDBConnection;
@@ -28,10 +31,11 @@ public class LoginController {
 	}
 
     @RequestMapping("/userdashboard")
-	public ModelAndView showNext(@ModelAttribute LoginForm loginform) {
+	public ModelAndView showNext(@ModelAttribute LoginForm loginform,ModelMap model) {
         System.out.println("this will execute when user login");
 		UserInfo userinfo=mongoDBConnection.getUserInfo(loginform.getAssociateId());
 		ModelAndView mv = new ModelAndView();
+		model.addAttribute("logininfo", loginform.getAssociateId());
 		if(userinfo.getRole().equalsIgnoreCase("associate")){
 
 			//mv.addObject("userInfo", userinfo);
