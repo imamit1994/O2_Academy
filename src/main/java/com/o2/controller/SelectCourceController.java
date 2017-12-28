@@ -41,7 +41,17 @@ public class SelectCourceController {
 		selectcourse.setAssociateId(AssociateId);
 		mongodbconnection.addselectedCourse(selectcourse);
 		System.out.println("selected course succesfully saved");
-		ModelAndView mv = new ModelAndView("test");
+		ModelAndView mv = new ModelAndView("aDashboard");
 		return mv;
 	}
+	
+	@RequestMapping("/showcourse")
+	public ModelAndView displayCourse(ModelMap model) {
+		ModelAndView mv=new ModelAndView("mycourses");
+		String AssociateId=(String) model.get("logininfo");
+		SelectCourse selectcourse = mongodbconnection.getSelectedCourseInfo(AssociateId);
+		mv.addObject("selectcourse",selectcourse);
+		return mv;
+	}
+	
 }

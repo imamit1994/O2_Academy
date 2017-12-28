@@ -44,5 +44,11 @@ public class MongoDBConnection {
 			return mongoTemplate.findOne(query,UserInfo.class);
 
 		}
+	    public SelectCourse getSelectedCourseInfo(String associateId){
+			Query query = new Query();
+			query.addCriteria(Criteria.where("associateId").is(associateId));
+			return mongoTemplate.findOne(query,SelectCourse.class);
+
+		}
 
 }

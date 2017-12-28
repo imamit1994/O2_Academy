@@ -37,13 +37,13 @@
     <!--Navigation Bar-->
     <nav>
         <ul>
-            <li ><a href="#">My Profile</a></li>
-            <li><a href="#">My Courses</a></li>
+            <li><a href="showcourse">My Courses</a></li>
+            <li><a href="dashbordotherthanlogin">Dashbord</a></li>
         </ul>
     </nav>
 
     <!--Log out-->
-    <button class="log_out" type="submit" id="sub">Sign Out</button>
+    <a href="signout"><button class="log_out" type="submit" id="sub">Sign Out</button></a>
 
 
 
