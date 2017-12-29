@@ -41,7 +41,7 @@
                 <div class="col-sm-4">
 					
 					<a href="viewMprofile"><button type="submit" class="widget1" id="sub1">View Profile</button></a>
-                   	<a href="viewMprofile"><button type="submit" class="widget1" id="sub1">View Associates</button></a>
+                   	<a href="viewallassociate"><button type="submit" class="widget1" id="sub1">View Associates</button></a>
                 </div>
             </div>
         </div>

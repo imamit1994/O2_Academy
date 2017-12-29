@@ -23,7 +23,7 @@ $(document).ready(function() {
 		if (count == 0) {
 			$.ajax({
 				method : "GET",
-				url : "http://localhost:8080/O2_Academy/allUser",
+				url : "allUser",
 				async : false,
 				success : function(data) {
 					userinfo = data;
@@ -50,6 +50,9 @@ $(document).ready(function() {
 			event.preventDefault();
 			$("form")[0].reset();
 		}
+		if(count==0){
+			alert("Thanks for Registe Yourself!!!! Please Login ");
+		}
 	});
 
 	$("input").change(function() {
@@ -71,7 +74,7 @@ $(document).ready(function() {
 		var count = 0;
 		$.ajax({
 			method : "GET",
-			url : "http://localhost:8080/O2_Academy/allUser",
+			url : "allUser",
 			async : false,
 			success : function(data) {
 				userinfo = data;

@@ -49,10 +49,25 @@ public class UserController {
     public String afterMentorSelect(@ModelAttribute UserSelectedMentor userSelectedmentor,ModelMap model) {
     	System.out.println(userSelectedmentor.getMentorId());
     	String associateId=(String) model.get("logininfo");
-    	UserInfo userInfo=mongodbconnection.getUserInfo(associateId);
-    	userSelectedmentor.setUserInfo(userInfo);
+    	userSelectedmentor.setAssociateId(associateId);
     	mongodbconnection.saveUserSelectedmentor(userSelectedmentor);
     	System.out.println("User successfully selected mentor");
     	return "redirect:/dashbordotherthanlogin";
+    }
+    @RequestMapping("/viewallassociate")
+    public ModelAndView displayAllAssociateToMentor(ModelMap model) {
+    	ModelAndView mv=new ModelAndView("viewallassociate");
+    	String mentorId=(String) model.get("logininfo");
+    	ArrayList<UserSelectedMentor> userList=mongodbconnection.getAllAssociateForMentor(mentorId);
+    	ArrayList<UserInfo> userInfo = new ArrayList<UserInfo>();
+    	 UserInfo userinfo = new UserInfo();
+    	for(UserSelectedMentor userlist:userList) {
+    		userinfo= mongodbconnection.getUserInfo(userlist.getAssociateId());
+    		System.out.println("nmae:"+userinfo.getName());
+    		userInfo.add(userinfo);
+    	}
+    	mv.addObject("userList",userInfo);
+    	System.out.println("userList"+userList);
+    	return mv;
     }
 }

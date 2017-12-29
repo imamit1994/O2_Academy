@@ -67,5 +67,11 @@ public class MongoDBConnection {
 	    public void saveUserSelectedmentor(UserSelectedMentor userSelectedMentor) {
 	        mongoTemplate.save(userSelectedMentor);
 	    }
-
+	    
+	    public ArrayList<UserSelectedMentor> getAllAssociateForMentor(String MentorId) {
+	    	Query query = new Query();
+	    	query.addCriteria(Criteria.where("mentorId").is(MentorId));
+	    	List<UserSelectedMentor> userlist=mongoTemplate.find(query,UserSelectedMentor.class);
+	    	return (ArrayList<UserSelectedMentor>) userlist;
+	    }
 }
