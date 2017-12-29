@@ -74,6 +74,7 @@
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>1.6.0.RELEASE</version>
 		</dependency>
+
   </dependencies>
   <build>
     <finalName>O2_Academy</finalName>

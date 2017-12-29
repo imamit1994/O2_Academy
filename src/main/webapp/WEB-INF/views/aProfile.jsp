@@ -36,19 +36,20 @@
     <!--Navigation Bar-->
     <nav>
         <ul>
-        <c:choose>
-        <c:when test="${userInfo.role=='associate'}">
-            <li><a href="showcourse">My Courses</a></li>
-            <li><a href="selectCourse">Select Courses</a></li>
-         </c:when>
-         </c:choose>
-            <li><a href="dashbordotherthanlogin">Dashbord</a></li>
+            <c:choose>
+                <c:when test="${userInfo.role=='associate'}">
+                    <li><a href="showcourse">My Courses</a></li>
+                    <li><a href="selectCourse">Select Courses</a></li>
+                </c:when>
+            </c:choose>
+            <li><a href="dashbordotherthanlogin">Dashboard</a></li>
         </ul>
 
     </nav>
 
     <!--Log out-->
     <a href="signout"><button class="log_out" type="submit" id="sub">Sign Out</button></a>
+
 
 
     <!--Web content-->
@@ -61,6 +62,7 @@
             <div class="wrapper">
                 <h2>Profile</h2>
                 <div class="container">
+                    <form:form modelAttribute="userInfo" action="editAprofile"  id="form">
                     <div>
                         <table class="table ">
                             <tr>
@@ -81,7 +83,9 @@
                             </tr>
                         </table>
                     </div>
+                    <button type="submit" id="updateDetails">Update Info</button>
                 </div>
+                </form:form>
             </div>
         </div>
     </div>

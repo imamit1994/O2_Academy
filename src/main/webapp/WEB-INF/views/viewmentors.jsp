@@ -34,7 +34,7 @@
         <ul>
             <li><a href="showcourse">My Courses</a></li>
             <li><a href="selectCourse">Select Courses</a></li>
-            <li><a href="dashbordotherthanlogin">Dashbord</a></li>
+            <li><a href="dashbordotherthanlogin">Dashboard</a></li>
         </ul>
 
     </nav>

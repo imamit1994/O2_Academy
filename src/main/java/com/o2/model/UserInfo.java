@@ -1,6 +1,7 @@
 package com.o2.model;
 
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 /*
  * UserInfo is the collection name inside mongo DB database
@@ -9,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserInfo {
 
 
-
+	@Id
 	String associateId;
 	String name;
 	String emailId;

@@ -19,6 +19,9 @@ public class SelectCourceController {
 	/*
 	 * TODO this will  display the selectCourse page and bind modelattribute selectcourse with SelectCourse class
 	 */
+
+
+
 	@RequestMapping("/selectCourse")
 	public ModelAndView showSelectCourcePage() {
 		System.out.println("display Select Cource page");
@@ -31,6 +34,8 @@ public class SelectCourceController {
 	 * TODO this will excute after user will select course and submit 
 	 * 		all the selected course will save inside SelectCource Collection in Db
 	 */
+
+
 	@RequestMapping("/nexttoselectcourse")
 	public ModelAndView afterselectCourse(@ModelAttribute SelectCourse selectcourse,ModelMap model) {
 		System.out.println("this will excute after Select course");

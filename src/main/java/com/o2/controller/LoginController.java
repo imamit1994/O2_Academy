@@ -15,43 +15,43 @@ import com.o2.model.LoginForm;
 
 import java.util.ArrayList;
 
+
 @Controller
 @SessionAttributes("logininfo")
 public class LoginController {
 	@Autowired
 	MongoDBConnection mongoDBConnection;
 
+
 	@RequestMapping("/login")
-	public ModelAndView getEmployeeLoginForm() {
+	public ModelAndView getEmployeeLoginForm(){
 		System.out.println("display login page");
 		ModelAndView mv = new ModelAndView("login");
 		mv.addObject("loginForm", new LoginForm());
-		return mv;
+        return mv;
 
 	}
 
-	@RequestMapping("/userdashboard")
-	public ModelAndView showNext(@ModelAttribute LoginForm loginform, ModelMap model) {
-		System.out.println("this will execute when user login");
-		UserInfo userinfo = mongoDBConnection.getUserInfo(loginform.getAssociateId());
+
+
+    @RequestMapping("/userdashboard")
+	public ModelAndView showNext(@ModelAttribute LoginForm loginform,ModelMap model) {
+        System.out.println("this will execute when user login");
+		UserInfo userinfo=mongoDBConnection.getUserInfo(loginform.getAssociateId());
 		ModelAndView mv = new ModelAndView();
 		model.addAttribute("logininfo", loginform.getAssociateId());
-		if (userinfo.getRole().equalsIgnoreCase("associate")) {
-
-			// mv.addObject("userInfo", userinfo);
-			mv.setViewName("aDashboard");
-
+		if(userinfo.getRole().equalsIgnoreCase("associate")){
+         mv.setViewName("aDashboard");
 		}
-		if (userinfo.getRole().equalsIgnoreCase("mentor")) {
-			// mv.addObject("userInfo", userinfo);
+		if(userinfo.getRole().equalsIgnoreCase("mentor"))
+		{
 			mv.setViewName("mDashboard");
+			}
 
-		}
-		// System.out.println("associateid="+loginform.getAssociateId()+"
-		// password="+loginform.getPassword());
-		return mv;
-	}
-	
+		return mv; }
+
+
+
 	@RequestMapping("/dashbordotherthanlogin")
 	public ModelAndView onDashbordOtherThanLogin(ModelMap model) {
 		String AssociateId=(String) model.get("logininfo");
@@ -65,11 +65,15 @@ public class LoginController {
 		}
 		return mv;
 	}
-	
+
+
+
+
 	@RequestMapping("/signout")
 	public String signOutUser(ModelMap model) {
 		model.remove("logininfo");
 		return "redirect:/home";
 	}
+
 
 }

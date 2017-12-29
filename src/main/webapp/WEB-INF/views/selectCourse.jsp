@@ -38,7 +38,7 @@
     <nav>
         <ul>
             <li><a href="showcourse">My Courses</a></li>
-            <li><a href="dashbordotherthanlogin">Dashbord</a></li>
+            <li><a href="dashbordotherthanlogin">Dashboard</a></li>
         </ul>
     </nav>
 
@@ -59,19 +59,19 @@
         <!-- List of Front End Courses-->
         <h4>Front End Courses</h4>
         <form:form modelAttribute="selectcourse" action="nexttoselectcourse">
-            <form:checkbox path="frontendtrack" name="course_1" value="HTML"/><a href="https://www.w3schools.com/html/default.asp">HTML</a><br>
-            <form:checkbox path="frontendtrack" name="course_2" value="CSS"/><a href="https://www.w3schools.com/css/default.asp">CSS</a><br>
-            <form:checkbox path="frontendtrack" name="course_3" value="Bootstrap"/><a href="https://www.w3schools.com/bootstrap/default.asp">Bootstrap</a><br>
-            <form:checkbox path="frontendtrack" name="course_4" value="JavaScript"/><a href="https://www.w3schools.com/js/default.asp">JavaScript</a><br>
-            <form:checkbox path="frontendtrack" name="course_5" value="AngularJS"/><a href="https://www.w3schools.com/angular/default.asp">AngularJS</a><br><br><br>
+            <form:checkbox path="frontendtrack" name="course_1" value="HTML"/>HTML<br>
+            <form:checkbox path="frontendtrack" name="course_2" value="CSS"/>CSS<br>
+            <form:checkbox path="frontendtrack" name="course_3" value="Bootstrap"/>Bootstrap<br>
+            <form:checkbox path="frontendtrack" name="course_4" value="JavaScript"/>JavaScript<br>
+            <form:checkbox path="frontendtrack" name="course_5" value="AngularJS"/>AngularJS<br><br><br>
 
         <!--List of Back End Courses-->
         <h4>Back End Courses</h4>
-        <form:checkbox path="backendtrack" name="course_6" value="MongoDB"/><a href="https://www.tutorialspoint.com/mongodb/">MongoDB</a><br>
-        <form:checkbox path="backendtrack" name="course_7" value="MYSQL"/><a href="https://www.tutorialspoint.com/mysql/">MY SQL</a><br>
-        <form:checkbox path="backendtrack" name="course_8" value="SpringMVC"/><a href="https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm">Spring MVC</a><br>
-        <form:checkbox path="backendtrack" name="course_7" value="Servlets"/><a href="https://www.tutorialspoint.com/servlets/">Servlets</a><br>
-        <form:checkbox path="backendtrack" name="course_8" value="Drupal"/><a href="https://www.tutorialspoint.com/drupal/">Drupal</a><br>
+        <form:checkbox path="backendtrack" name="course_6" value="MongoDB"/>MongoDB<br>
+        <form:checkbox path="backendtrack" name="course_7" value="MYSQL"/>MY SQL<br>
+        <form:checkbox path="backendtrack" name="course_8" value="SpringMVC"/>Spring MVC<br>
+        <form:checkbox path="backendtrack" name="course_7" value="Servlets"/>Servlets<br>
+        <form:checkbox path="backendtrack" name="course_8" value="Drupal"/>Drupal<br>
         <button class="submit_Btn" type="submit" id="submit">Submit</button>
         </form:form>
      </div>

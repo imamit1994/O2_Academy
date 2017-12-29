@@ -39,7 +39,7 @@
 		<!--Navigation Bar-->
 		<nav>
 		<ul>
-            <li><a href="dashbordotherthanlogin">Dashbord</a></li>
+            <li><a href="dashbordotherthanlogin">Dashboard</a></li>
 		</ul>
 		</nav>
 
