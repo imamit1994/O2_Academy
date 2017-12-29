@@ -15,6 +15,13 @@ $(document).ready(function() {
 		var count = 0;
 		var password = $('#password').val();
 		var confirmpassword = $('#confirmpassword').val();
+		var emailid = $('#email').val();
+		var associateid = $('#associateid').val();
+		var name = $('#name').val();
+		if(password==""||confirmpassword==""||emailid==""||associateid==""||name==""){
+			count++;
+			alert("All fields are mandatory")
+		}
 		if (password!=confirmpassword) {
 			count++;
 			$("#validatePassword").show();
@@ -33,8 +40,6 @@ $(document).ready(function() {
 					alert(xhr.responseText);
 				}
 			});
-			var emailid = $('#email').val();
-			var associateid = $('#associateid').val();
 			for (var i = 0; i < userinfo.length; i++) {
 				if (emailid == userinfo[i].emailId) {
 					$("#emailvalidation").show();

@@ -24,13 +24,13 @@
     <!--  <p id="usernamevalidation">User Name is already registered Please Choose a different one</p>-->
     </div>
     <form:form modelAttribute="userInfo"  action="usersave" id="form">
-    <label><b>Name</b></label>
-    <form:input type="text" placeholder="Enter Associate Name" name="name" path="name" required="required"></form:input>
+    <label><b>Name</b><span style="color:#8B0000;">*</span></label>
+    <form:input type="text" placeholder="Enter Associate Name" id="name" path="name"></form:input>
 
-    <label><b>Associate Id</b></label>
-    <form:input type="Tel" placeholder="Enter Id" name="Id" path="associateId" required="required" id="associateid"></form:input>
+    <label><b>Associate Id</b><span style="color:#8B0000;">*</span></label>
+    <form:input type="Tel" placeholder="Enter Id" name="Id" path="associateId" id="associateid"></form:input>
     
-    <label><b>Role</b></label>   
+    <label><b>Role</b><span style="color:#8B0000;">*</span></label>   
   <form:select name="Role" path="role">
     <form:option value="associate">Associate</form:option>
     <form:option value="mentor">Mentor</form:option>
@@ -38,13 +38,13 @@
 
   <br>
 
-    <label><b>Email Id</b></label>
-    <form:input type="Email" placeholder="Email Id" name="Email" path="emailId" required="required" id="email"></form:input>
-    <label><b>Select Password</b></label>
-    <form:input type="password" placeholder="Password" name="password" path="password" required="required" id="password"></form:input>
+    <label><b>Email Id</b><span style="color:#8B0000;">*</span></label>
+    <form:input type="Email" placeholder="Email Id" name="Email" path="emailId" id="email"></form:input>
+    <label><b>Select Password</b><span style="color:#8B0000;">*</span></label>
+    <form:input type="password" placeholder="Password" name="password" path="password" id="password"></form:input>
 
-    <label><b>Confirm Password</b></label>
-    <form:input type="password" placeholder="Confirm Password" name="Password" path="confirmPassword" required="required" id="confirmpassword"></form:input>        
+    <label><b>Confirm Password</b><span style="color:#8B0000;">*</span></label>
+    <form:input type="password" placeholder="Confirm Password" name="Password" path="confirmPassword" id="confirmpassword"></form:input>        
     <button type="submit" id="registersubmit">Sign Up</button>
 </form:form>
 </div>
