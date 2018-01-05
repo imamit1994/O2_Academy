@@ -15,6 +15,8 @@ import com.o2.model.LoginForm;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 
 @Controller
 @SessionAttributes("logininfo")
@@ -70,8 +72,9 @@ public class LoginController {
 
 
 	@RequestMapping("/signout")
-	public String signOutUser(ModelMap model) {
+	public String signOutUser(ModelMap model,HttpSession session) {
 		model.remove("logininfo");
+		session.invalidate();
 		return "redirect:/home";
 	}
 
